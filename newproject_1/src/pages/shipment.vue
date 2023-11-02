@@ -63,14 +63,48 @@
       </div>
       <div class="about">
         <div class="about-content">
-            <div>
+            <div style="display:flex;justify-content: space-between;">
+                <div>
                 <h5 style="margin-bottom:0;">Welcome back Bibash Khadka,</h5>
                 <p>Thursday, 16 Aug</p>
-            </div>
+                </div>
 
-            <div style="margin-top:5%">
+                <div style="display:flex;justify-content: center;align-items: center;">
+                    <img src="public/assets/dark mode icon.svg"  style="margin-right:10px;">
+                   <div style="
+    border-radius: 50px;background:#F97031; color:white;margin-right:10px;">BK</div>
+                    <img src="public\assets\dropdown (1).svg">
+                </div>
+            </div>
+            
+
+            <div style="margin-top:5%;display:flex;justify-content: space-between;">
+                <div>
                 <h5 style="margin-bottom:0;">Shipments</h5>
                 <p>You can check or create your new orders , ready to shipment and track an orders.</p>
+                </div>
+                <div style="display:flex; justify-content: space-between;">
+                    <div style="display:flex;justify-content: center;
+    align-items: center;margin-right:30px;">
+                    <img src="public\assets\download.svg" style="height:10px;margin-right:10px;">
+                    <p>Download Template</p>
+                    </div>
+                    <div style="display:flex;justify-content: center;
+    align-items: center;margin-right:30px;">
+                    <img src="public/assets/import icon.png" style="height:10px;margin-right:10px;">
+                    <p>Import CSV</p>
+                    </div>
+                    <div style="display:flex;justify-content: center;
+    align-items: center;" >
+                    <button style="background-image: linear-gradient(#F97031,#F1306B);
+                    border: none;
+    padding: 5px;
+    color: white;">+ Add Order</button>
+                    </div>
+
+                </div>
+
+                
             </div>
 
             <div style="display:flex;">
@@ -90,8 +124,41 @@
                     </div>
                     <p style="color:#393A60"><b>Shipment History</b></p>
                 </div>
+
                 
                 
+                
+            </div>
+
+            <div style="display:flex;justify-content: space-between;">
+                <div style="display:flex;    align-items: center;">
+                    <img src="public/assets/Search.png"  style="height:15px;">
+                    <p style="margin-left: 10px;">Search by criteria including name, reference, connote …</p>
+            </div>
+
+            <div style="display:flex;">
+                <img src="public/assets/filter icon.svg" style="margin-right: 10px;">
+                <p>Filters</p>
+
+            </div>
+            </div>
+            
+            <div style=" border:1px solid #F0F2F7;
+    border-radius: 5px;
+    background:#FFFFFF;">
+                <div class="content1">
+                    <img src="public/assets/empty box svg.png" style="margin-top: 10%;">
+                </div>
+               
+
+                <div style="display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;">
+                <p><b>You currently have no new orders</b></p>
+                <p style="width:30%;margin:0">You can check for new orders by syncing with your ecommerce integration.</p>
+                </div>
             </div>
             
         </div>
@@ -137,5 +204,12 @@ border:1px solid #F0F2F7;
     margin-right:5%;
     display:flex;
     align-items: center;
+}
+
+.content1{
+   
+    display: flex;
+    
+    justify-content: center;
 }
 </style>

@@ -14,25 +14,57 @@
                     <input type="text" placeholder="Enter your email" class="input"><br><br>
                     <label>Password</label><br>
                     <div style="display:flex;border: 1px solid #DDD; justify-content: space-between;padding:1%; border-radius: 3%;">
-                    <input type="password" placeholder="Enter your password" style="border:none; width:100%;" ><br><br>
-                    <img src="public/assets/eye visibility (1).svg">
+                    <input :type="fieldtype" placeholder="Enter your password" style="border:none; width:100%;" ><br><br>
+                    <img src="public/assets/eye visibility (1).svg" @click="showpassword">
                     </div>
                     
-                    <button class="btn">Log In</button>
-
-                    <a href="#" style="color:black;
-    display: flex;
-    justify-content: end;
-    margin-top: 3%;">Forgot Password?</a>
+                    
                 </form>
+
+                <button class="btn"   @click="redirectToshipment">Log In</button>
+
+                <a href="#" style="color:black;
+                    display: flex;justify-content: end;margin-top: 3%;">
+                    Forgot Password?
+                </a>
             </div>
+               
 
             
             
         </div>
        
     </div>
+
+    <router-link to="/shipment">Shipment</router-link>
+
 </template>
+
+<script>
+export default{
+    data(){
+        return{
+            fieldtype: "password"
+        }
+    },
+    methods:{
+        showpassword(){
+          
+              console.log("check")
+            if (this.fieldType == "password") {
+            this.fieldType = "text";
+        }
+         else this.fieldType = "password";
+        },
+        redirectToshipment(){
+            this.$router.push({ path: '/shipment' });
+        }
+
+    }
+
+}
+
+</script>
 
 
 
@@ -61,6 +93,9 @@ box-shadow: 30px 53px 26px #F3485608;
 border: 1px solid #F0F2F7;
 opacity: 1;
 padding-top: 5%; padding-bottom: 5%;
+margin-top: 15%;
+
+margin-bottom: 15%;
 }
 
 .form{
@@ -85,5 +120,6 @@ padding-top: 5%; padding-bottom: 5%;
  border:none;
  border-radius:3px;
  margin-top: 5%;
+
 }
 </style>

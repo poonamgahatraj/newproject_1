@@ -1,14 +1,16 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { RouterLink, RouterView } from 'vue-router';
 import Loginpage from './pages/Loginpage.vue';
-import Shipment from './pages/shipment.vue';
+
+import shipment from './pages/shipment.vue';
 
 </script>
 
 <template>
+
+
+<router-view></router-view>
  
-  <shipment/>
 </template>
 
 <style scoped>
