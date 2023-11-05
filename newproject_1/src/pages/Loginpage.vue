@@ -1,15 +1,15 @@
 <template>
-    <div class="container">
+    <div class="content-box">
         <img src="public/assets/Logo.png"  class="logo">
 
         <div class="content">
             <div style="display:flex;flex-direction: column; text-align: center;">
-                <h1>Welcome back</h1>
+                <p style="font-size: 30px;margin-bottom:0;"><b></b>Welcome back</p>
                 <p style="font-size: 18px; color: #1C1C1C;">Log In to manage your deliveries and access other services.</p>
             </div>
 
             <div class="form">
-                <form style="display:flex; flex-direction: column;">
+                <form style="display:flex; flex-direction: column; margin-top:10%;">
                     <label>Email</label><br>
                     <input type="text" placeholder="Enter your email" class="input"><br><br>
                     <label>Password</label><br>
@@ -68,12 +68,14 @@ export default{
 
 
 
-<style>
+<style scoped>
 
-.container{
+.content-box{
+
     border:1px solid#1C1C1C33;
     background: #FFFFFF 0% 0% no-repeat padding-box;
-     opacity: 1;
+    opacity: 1;
+
 }
 
 .logo{
@@ -93,7 +95,7 @@ box-shadow: 30px 53px 26px #F3485608;
 border: 1px solid #F0F2F7;
 opacity: 1;
 padding-top: 5%; padding-bottom: 5%;
-margin-top: 15%;
+margin-top: 10%;
 
 margin-bottom: 15%;
 }
@@ -115,7 +117,7 @@ margin-bottom: 15%;
 .btn{
  width:100%;   
  padding:3%;
- background: rgba(245, 86, 74, 1)  ;
+ background-image: linear-gradient(#F5564A,#F34558);
  color:white;
  border:none;
  border-radius:3px;
