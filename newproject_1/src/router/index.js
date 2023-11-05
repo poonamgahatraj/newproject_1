@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Loginpage from '../pages/Loginpage.vue';
-import shipment from '../pages/shipment.vue'
+import shipment from '../pages/shipment.vue';
+import address from '../components/address.vue'
 
 
 const router = createRouter({
@@ -18,6 +19,12 @@ const router = createRouter({
       path: '/shipment',
       name: 'shipment',
       component: shipment
+    },
+
+    {
+      path: '/address',
+      name: 'address',
+      component: address
     },
 
   ]

@@ -76,10 +76,19 @@
                     <img src="public/assets/dark mode icon.svg"  style="margin-right:10px;">
                    <div style="
     border-radius: 50px;background:#F97031; color:white;margin-right:10px;">BK</div>
-                    <img src="public\assets\dropdown (1).svg">
+                    <img src="public\assets\dropdown (1).svg"  @click="showdropdown=!showdropdown">
                 </div>
 
                 
+            </div>
+            <div class="dropdown"  v-if="showdropdown">
+                <div class="dropdown_content">
+                    <p class="para">Setting</p>
+                </div>
+               <div class="dropdown_content">
+                <p class="para">Log Out</p>
+               </div>
+               
             </div>
             <hr>
             
@@ -153,16 +162,44 @@
     background: #FDFDFD;
     height: 28px;
     justify-content: center;
-    align-items: center;">
+    align-items: center;" @click="showfilter=!showfilter">
                 <img src="public/assets/filter icon.svg" style="margin-right: 10px;">
                 <p  style="color:#393A60">Filters</p>
 
             </div>
-            </div>
+
             
+            </div>
+            <div class="filters" v-if="showfilter">
+                <div style="display:flex;justify-content: space-between;    align-items: center;">
+                    <p><b>Filter by</b></p>
+                    <button style="border:none;"><b>X</b></button>
+                </div>
+                <hr>
+                <p><b>Date </b></p>
+                <div style="display:flex;justify-content: space-between;">
+                    <p >Past week</p>
+                    <img src="public\assets\dropdown (1).svg" @click="showpastweek=!showpastweek">
+                </div>
+                <button style="width: 100%;
+    padding: 8px;
+    background-image: linear-gradient(#F86A36,#F1306B);
+    border:none;
+    border-radius:3%;">Apply Filter</button>
+                
+                
+            </div>
             <div style=" border:1px solid #F0F2F7;
     border-radius: 5px;
     background:#FFFFFF;">
+    <div class="pastweek" v-if="showpastweek">
+        <p class="para1">Past Week</p>
+        <p class="para1">Past Month</p>
+        <p class="para1">Past Year</p>
+        <p class="para1">All Time</p>
+       <hr>
+       <input type="radio"><label>Custom Date</label>
+    </div>
                 <div class="content1">
                     <img src="public/assets/empty box svg.png" style="margin-top: 10%;">
                 </div>
@@ -189,11 +226,16 @@
 <script>
 
 export default{
+    components:{address},
     data(){
         return{
                 clickoption:"neworders",
 
-                current_tab:"newOrders"
+                current_tab:"newOrders",
+
+                showdropdown:false,
+                showfilter:false,
+                showpastweek:false
 
         }
     },
@@ -248,6 +290,7 @@ border:1px solid #F0F2F7;
 .about-content{
     margin-left: 15px;
     margin-right: 15px;
+    position: relative;
 }
 
 .about{
@@ -273,6 +316,56 @@ border:1px solid #F0F2F7;
     border-left:3px solid #F97031;
 }
 
+.dropdown{
+    border: 1px solid#E1E1E7;
+    width: 15%;
+    position: absolute;
+    height: 12%;
+    left: 85%;
+    z-index: 2;
+    background: white;
+    top: 11%;
+    color:#393A60
+}
+
+.dropdown_content:hover{
+    background:#FAFAFA
+}
+
+.para{
+    margin:0;
+    padding :10px;
+}
+
+.filters{
+    width:20%;
+    position: absolute;
+    height: 12%;
+    left: 80%;
+    z-index: 2;
+    border:1px solid #F0F2F7;
+    border-radius: 3%;
+}
+
+.pastweek{
+    width:20%;
+    border: 1px solid #F0F2F7;
+    border-radius: 3%;
+    position: absolute;
+    left: 80%;
+    top: 68%;
+    z-index: 3;
+    background: white;
+}
+
+.para1{
+    margin:0;
+    padding :10px;
+}
+
+.para1:hover{
+    background:#F4F4F4
+}
 
 
 
