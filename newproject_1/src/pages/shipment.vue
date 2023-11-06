@@ -20,7 +20,7 @@
             <div class="subnav">
                 <img src="public/assets/shipment icon.svg" class="imag">
                 <p>Shipments</p>
-                <img src="public/assets/number.svg" style="    margin-left: 35%;">
+                <img src="public/assets/number.svg" style="    margin-left: 20%;">
             </div>
             <div class="subnav">
                 <img src="public/assets/history icon.svg" class="imag">
@@ -100,7 +100,7 @@
                 </div>
                 <div style="display:flex; justify-content: space-between;">
                     <div style="display:flex;justify-content: center;
-    align-items: center;margin-right:30px;">
+    align-items: center;margin-right:30px;" @click="showDownload=!showDownload">
                     <img src="public\assets\download.svg" style="height:10px;margin-right:10px;">
                     <p style="color:#393A60">Download Template</p>
                     </div>
@@ -120,6 +120,11 @@
                 </div>
 
                 
+            </div>
+
+            <div class="Download_template" v-if="showDownload">
+              <div class="download_content">Domestic Download</div>
+              <div class="download_content">International Download</div>
             </div>
 
             <div style="display:flex; margin-right:5%;
@@ -221,10 +226,12 @@
       </div>
 
     </div>
+
+    
 </template>
 
 <script>
-
+import address from '../components/address.vue';
 export default{
     components:{address},
     data(){
@@ -235,7 +242,8 @@ export default{
 
                 showdropdown:false,
                 showfilter:false,
-                showpastweek:false
+                showpastweek:false,
+                showDownload:false
 
         }
     },
@@ -367,6 +375,19 @@ border:1px solid #F0F2F7;
     background:#F4F4F4
 }
 
+.Download_template{
+    position: absolute;
+    left: 57%;
+    top: 24%;
+    border: 1px solid grey;
+}
+.download_content{
+    padding:5px;
+    background:#FAFAFA
+}
+.download_content:hover{
+background:#E1E2E6
+}
 
 
 </style>
