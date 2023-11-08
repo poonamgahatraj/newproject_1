@@ -22,11 +22,12 @@
                 <p>Shipments</p>
                 <img src="public/assets/number.svg" style="    margin-left: 20%;">
             </div>
-            <div class="subnav">
+            <div class="subnav" @click="showmanifest=!showmanifest">
                 <img src="public/assets/history icon.svg" class="imag">
                 <p>Manifest history</p>
+                
             </div>
-            <div class="subnav">
+            <div class="subnav" @click="showaddress=!showaddress">
                 <img src="public/assets/address book icon.svg" class="imag">
                 <p>Address book</p>
             </div>
@@ -196,7 +197,8 @@
             </div>
             <div style=" border:1px solid #F0F2F7;
     border-radius: 5px;
-    background:#FFFFFF;">
+    background:#FFFFFF;
+    z-index: 0;">
     <div class="pastweek" v-if="showpastweek">
         <p class="para1">Past Week</p>
         <p class="para1">Past Month</p>
@@ -205,6 +207,8 @@
        <hr>
        <input type="radio"><label>Custom Date</label>
     </div>
+                <manifest  v-if="showmanifest"/>
+                <addressbook  v-if="showaddress"/>
                 <div class="content1">
                     <img src="public/assets/empty box svg.png" style="margin-top: 10%;">
                 </div>
@@ -232,8 +236,10 @@
 
 <script>
 import address from '../components/address.vue';
+import manifest from '../components/manifest.vue';
+import addressbook from '../components/addressbook.vue'
 export default{
-    components:{address},
+    components:{address, manifest,addressbook},
     data(){
         return{
                 clickoption:"neworders",
@@ -243,7 +249,9 @@ export default{
                 showdropdown:false,
                 showfilter:false,
                 showpastweek:false,
-                showDownload:false
+                showDownload:false,
+                showmanifest:false,
+                showaddress:false
 
         }
     },
